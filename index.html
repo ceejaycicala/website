@@ -49,7 +49,7 @@
                 <div class="timekeep">
                     <time id="local-clock"></time>
                     <span>in </span>
-                    <span>Melbourne, Australia.</span>
+                    <span>Melbourne, Australia</span>
                     <script src="js/setup.js" defer></script>
                 </div>
                 <div class="links">
@@ -59,7 +59,10 @@
                         <a class="link" href="/robots.txt">Robots.xml</a>
                         <!-- <a class="link" href="/llms.xml">LLMs.xml</a> -->
                     </div>
-                    <span>&copy; 2026.</span>
+                    <span>&copy; <span id="year"></span></span>
+                    <script>
+                        document.getElementById('year').textContent = new Date().getFullYear();
+                    </script>
                 </div>
             </footer>
         </div>
