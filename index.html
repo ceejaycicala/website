@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Ceejay Cicala</title>
+
+        <meta name="referrer"    content="strict-origin-when-cross-origin">
+        <meta name="color-scheme" content="light dark">
+        <meta name="darkreader-lock">
+
+        <link rel="icon" href="/favicon.png" type="image/png">
+
+        <script src="js/setup.js" defer></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/fadein.css">
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header class="fade-in delay-100">
+                <h1>Ceejay Cicala</h1>
+                <p class="role">Computer Science Student</p>
+            </header>
+
+            <section class="bio fade-in delay-200">
+                <p>Under contruction.</p>
+                <p>But, you can still find me by <a class="link" href="https://www.linkedin.com/in/ceejaycicala" target="_blank" aria-label="LinkedIn">LinkedIn</a>,
+                <a class="link" href="https://github.com/ceejaycicala" target="_blank" aria-label="GitHub">GitHub</a>, or contact me via 
+                <button class="link" onclick="copyEmail()">email</button>.</p>
+                <div id="toast" class="toast">Email Copied</div>
+                <script>
+                    function copyEmail() {
+                        navigator.clipboard.writeText("him@ceejaycicala.com");
+
+                        const toast = document.getElementById("toast");
+                        toast.classList.add("show");
+
+                        setTimeout(() => {
+                            toast.classList.remove("show");
+                        }, 2500);
+                    }
+                </script>
+            </section>
+
+            <footer class="fade-in delay-300">
+                <div class="timekeep">
+                    <time id="local-clock"></time>
+                    <span>in </span>
+                    <span>Melbourne, Australia.</span>
+                    <script src="js/setup.js" defer></script>
+                </div>
+                <div class="links">
+                    <div class="footer-links">
+                        <!-- <button>x</button> -->
+                        <a class="link" href="/sitemap.xml">Sitemap.xml</a>
+                        <a class="link" href="/robots.txt">Robots.xml</a>
+                        <!-- <a class="link" href="/llms.xml">LLMs.xml</a> -->
+                    </div>
+                    <span>&copy; 2026.</span>
+                </div>
+            </footer>
+        </div>
+
+    </body>
+
+</html>

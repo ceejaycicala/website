@@ -1,0 +1,49 @@
+.fade-in {
+    opacity: 0;
+    filter: blur(10px);
+    will-change: opacity, filter, transform;
+    animation: blurIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
+
+@keyframes blurIn {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        /* transform: scale(0.99); */
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+        /* transform: scale(1); */
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .blur-in-section {
+        animation: none !important;
+        opacity: 1 !important;
+        filter: blur(0px) !important;
+        transform: none !important;
+    }
+}
