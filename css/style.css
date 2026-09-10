@@ -23,6 +23,9 @@
     --link-hover: #004e9c;
     /* --focus: #047de7; */
 
+    --success: #22c55e;
+    --success-border: #16a34a;
+
     --selection: #047de7;
     --selection-bg: color-mix(in oklab, var(--selection) 30%, var(--background));
 }
@@ -222,9 +225,7 @@ footer {
     gap: 0.3rem;
     padding: 0.15rem 0.35rem;
 
-    /* font-family: var(--font-family-mono); */
     font-size: 16px;
-    /* font-weight: 500; */
     color: var(--text-main);
 
     background: var(--background-light);
@@ -240,14 +241,13 @@ footer {
     transition-timing-function: ease-out;
 }
 
-.copy-tag:hover{
+.copy-tag:hover {
     color: var(--link);
     border-color: var(--link-hover);
     border-style: dashed;
     background-color: color-mix(in oklab, var(--link) 8%, transparent);
 }
 
-/* Icon Sizing & Color States */
 .copy-icon {
     width: 0.85em;
     height: 0.85em;
@@ -260,6 +260,26 @@ footer {
     transition-timing-function: ease-out;
 }
 
-.copy-tag:hover .copy-icon{
+.copy-tag:hover .copy-icon {
     color: var(--link);
+}
+
+.copy-icon.icon-check {
+    display: none;
+}
+
+.copy-tag.is-copied {
+    color: var(--success);
+    border-color: var(--success-border);
+    border-style: dashed;
+    background-color: color-mix(in oklab, var(--success) 12%, transparent);
+}
+
+.copy-tag.is-copied .icon-copy {
+    display: none;
+}
+
+.copy-tag.is-copied .icon-check {
+    display: block;
+    color: var(--success);
 }
