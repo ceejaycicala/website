@@ -213,5 +213,9 @@ footer {
 
 .footer-links {
     display:flex;
-    gap: 1rem;
+    gap: 0.5rem;
+}
+
+.dividor {
+    font-weight: 600;
 }
