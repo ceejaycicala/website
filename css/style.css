@@ -11,6 +11,7 @@
     --font-family-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --background: #0d0d0e;
+    --background-light: #19191b;
     --muted: #5a5959;
     --text-main: #cfcfcf;
     --text-muted: #b0b0b0;
@@ -24,9 +25,8 @@
 
     --selection: #047de7;
     --selection-bg: color-mix(in oklab, var(--selection) 30%, var(--background));
-
-
 }
+
 @media (prefers-color-scheme: dark) { 
     :root {
         /* x */
@@ -152,7 +152,7 @@ button.link {
 
 .toast {
     min-width: 5rem;
-    background-color: #1a1a1a;
+    background-color: var(--background-light);
     color: var(--text);
     text-align: center;
     border-radius: 0.75rem;
@@ -214,4 +214,52 @@ footer {
 .footer-links {
     display:flex;
     gap: 1rem;
+}
+
+.copy-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.15rem 0.35rem;
+
+    /* font-family: var(--font-family-mono); */
+    font-size: 16px;
+    /* font-weight: 500; */
+    color: var(--text-main);
+
+    background: var(--background-light);
+    border: 1px dashed var(--border-color);
+    border-radius: 0.4rem;
+
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+
+    transition-property: color, border-color, background-color;
+    transition-duration: 100ms;
+    transition-timing-function: ease-out;
+}
+
+.copy-tag:hover{
+    color: var(--link);
+    border-color: var(--link-hover);
+    border-style: dashed;
+    background-color: color-mix(in oklab, var(--link) 8%, transparent);
+}
+
+/* Icon Sizing & Color States */
+.copy-icon {
+    width: 0.85em;
+    height: 0.85em;
+    fill: currentColor;
+    color: var(--text-muted);
+    flex-shrink: 0;
+
+    transition-property: color;
+    transition-duration: 100ms;
+    transition-timing-function: ease-out;
+}
+
+.copy-tag:hover .copy-icon{
+    color: var(--link);
 }
