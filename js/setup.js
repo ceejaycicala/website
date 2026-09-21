@@ -1,20 +1,54 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // Footer Year
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+
+    // Local Clock
+    updateClock();
+    setInterval(updateClock, 1000);
+});
+
+function copyEmail(buttonEl) {
+    navigator.clipboard.writeText("him@ceejaycicala.com");
+
+    const toast = document.getElementById("toast");
+    if (toast) {
+        toast.classList.add("show");
+    }
+
+    if (buttonEl) {
+        buttonEl.classList.add("is-copied");
+    }
+
+    setTimeout(() => {
+        if (toast) {
+            toast.classList.remove("show");
+        }
+        if (buttonEl) {
+            buttonEl.classList.remove("is-copied");
+        }
+    }, 1500);
+}
+
 function updateClock() {
+    const clockElement = document.getElementById("local-clock");
+    if (!clockElement) return;
+
     const now = new Date();
 
-    const timeString = now.toLocaleTimeString([], {
-        hour: 'numeric',
-        minute: '2-digit',
+    // Enforce Melbourne timezone
+    const timeString = now.toLocaleTimeString("en-AU", {
+        timeZone: "Australia/Melbourne",
+        hour: "numeric",
+        minute: "2-digit",
         hour12: true
     });
 
-    const clockElement = document.getElementById('local-clock');
     clockElement.textContent = timeString;
 
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    clockElement.setAttribute('datetime', `${hours}:${minutes}`);
+    const options = { timeZone: "Australia/Melbourne", hour: "2-digit", minute: "2-digit", hour12: false };
+    const melbourneTimeStr = now.toLocaleTimeString("en-AU", options);
+    clockElement.setAttribute("datetime", melbourneTimeStr);
 }
-
-updateClock();
-
-setInterval(updateClock, 1000);
