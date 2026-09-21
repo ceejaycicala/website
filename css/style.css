@@ -140,11 +140,6 @@ p {
     transition-timing-function: ease-out;
 }
 
-.link:active {
-    text-decoration-color: var(--link);
-    -webkit-text-decoration-color: var(--link);
-}
-
 button.link {
     background: none;
     border: none;
