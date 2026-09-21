@@ -240,7 +240,7 @@ footer {
     transition-timing-function: ease-out;
 }
 
-.copy-tag:hover {
+.copy-tag:hover, .copy-tag:focus {
     color: var(--link);
     border-color: var(--link-hover);
     border-style: dashed;
@@ -259,7 +259,8 @@ footer {
     transition-timing-function: ease-out;
 }
 
-.copy-tag:hover .copy-icon {
+.copy-tag:hover .copy-icon,
+.copy-tag:focus .copy-icon {
     color: var(--link);
 }
 
