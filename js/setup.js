@@ -10,6 +10,21 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(updateClock, 1000);
 });
 
+// Press C to copy email shortcut
+document.addEventListener("keydown", (e) => {
+    const activeEl = document.activeElement;
+    const isTyping = activeEl && (
+        activeEl.tagName === "INPUT" ||
+        activeEl.tagName === "TEXTAREA" ||
+        activeEl.isContentEditable
+    );
+
+    if (!isTyping && e.key.toLowerCase() === "c" && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        e.preventDefault();
+        copyEmail();
+    }
+});
+
 function copyEmail(buttonEl) {
     navigator.clipboard.writeText("him@ceejaycicala.com");
 
