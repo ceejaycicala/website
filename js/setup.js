@@ -8,6 +8,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // Local Clock
     updateClock();
     setInterval(updateClock, 1000);
+
+    // Change Page Title After Leaving
+    const originalTitle = document.title;
+    let titleTimeout;
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            titleTimeout = setTimeout(() => {
+                document.title = "👋";
+            }, 10000);
+        } else {
+            clearTimeout(titleTimeout);
+            document.title = originalTitle;
+        }
+    });
 });
 
 // Press C to copy email shortcut
